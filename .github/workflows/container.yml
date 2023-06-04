@@ -30,7 +30,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'cointainer/**'
+      - 'container/**'
 
 defaults:
   run:
