@@ -32,6 +32,7 @@ const devConfig={
     ]
 };
 
+
 const config=merge(commonConfig,devConfig);
 console.log(config)
 
