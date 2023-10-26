@@ -13,7 +13,7 @@ const prodConfig = {
   },
   plugins: [
     new Mfp({
-      name: "container",
+      name: "marketing",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/bootstrap",
