@@ -8,12 +8,12 @@ export default () => {
   return (
     <Fragment>
       <StylesProvider>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/pricing" component={Pricing} />
-            <Route exact path="/" component={Landing} />
-          </Switch>
-        </BrowserRouter>
+        {/* <BrowserRouter> */}
+        <Switch>
+          <Route exact path="/pricing" component={Pricing} />
+          <Route exact path="/" component={Landing} />
+        </Switch>
+        {/* </BrowserRouter> */}
       </StylesProvider>
     </Fragment>
   );
