@@ -11,8 +11,6 @@ export default () => {
     <BrowserRouter>
       <Fragment>
         <Header />
-        <p>Hi!</p>
-        <hr />
         <MarketingApp />
         {/*<App/>*/}
       </Fragment>
