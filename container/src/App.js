@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MarketingApp from "./components/MarketingApp";
+// import MarketingApp from "./components/MarketingApp";
 import Header from "./components/Header";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
 
@@ -11,7 +11,7 @@ export default () => {
     <BrowserRouter>
       <Fragment>
         <Header />
-        <MarketingApp />
+        {/* <MarketingApp /> */}
         {/*<App/>*/}
       </Fragment>
     </BrowserRouter>
