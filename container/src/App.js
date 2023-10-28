@@ -8,7 +8,7 @@ import MarketingApp from "./components/MarketingApp";
 export default () => {
   return (
     <Fragment>
-      {/* <Header /> */}
+      <Header />
       <p>Hi!</p>
       <hr />
       <MarketingApp />
