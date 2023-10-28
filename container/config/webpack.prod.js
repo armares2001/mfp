@@ -11,6 +11,9 @@ const prodConfig = {
     filename: "[name].[contenthash].js",
     publicPath: "/container/latest/",
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new Mfp({
       name: "container",
