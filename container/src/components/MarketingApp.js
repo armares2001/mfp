@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { mount } from "marketing/App";
 
-const MarketingApp = (history) => {
+const MarketingApp = ({ history }) => {
   const ref = useRef(null);
 
   useEffect(() => {
