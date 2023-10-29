@@ -12,7 +12,9 @@ const prodConfig = {
     publicPath: "/container/latest/",
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      historyApiFallback: true,
+    },
   },
   plugins: [
     new Mfp({

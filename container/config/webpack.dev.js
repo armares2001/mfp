@@ -7,7 +7,9 @@ const devConfig = {
   mode: "development",
   devServer: {
     port: 8080,
-    historyApiFallback: true,
+    historyApiFallback: {
+      historyApiFallback: true,
+    },
     // historyApiFallback: {
     //   index: "index.html",
     // },
@@ -20,14 +22,18 @@ const devConfig = {
       },
       shared: {
         ...deps,
-        // react: {
-        //     singleton: true,
-        //   requiredVersion: deps.react,
-        // },
-        // "react-dom": {
-        //     singleton: true,
-        //   requiredVersion: deps["react-dom"],
-        // },
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+        "react-router-dom": {
+          singleton: true,
+          requiredVersion: deps["react-router-dom"],
+        },
       },
     }),
   ],

@@ -8,7 +8,9 @@ const devConfig = {
   mode: "development",
   devServer: {
     port: 8081,
-    historyApiFallback: true,
+    historyApiFallback: {
+      historyApiFallback: true,
+    },
   },
   plugins: [
     new Mfp({
@@ -27,6 +29,10 @@ const devConfig = {
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
+        },
+        "react-router-dom": {
+          singleton: true,
+          requiredVersion: deps["react-router-dom"],
         },
       },
     }),

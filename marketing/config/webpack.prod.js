@@ -12,7 +12,9 @@ const prodConfig = {
     publicPath: "/marketing/latest/",
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      historyApiFallback: true,
+    },
   },
   plugins: [
     new Mfp({
