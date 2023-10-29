@@ -14,13 +14,12 @@ const generateClassName = createGenerateClassName({
 });
 
 export default () => {
-  const history = useHistory();
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
-        <Header history={history} />
+        <Header />
 
-        <MarketingApp history={history} />
+        <MarketingApp />
 
         {/*<App/>*/}
       </StylesProvider>
