@@ -9,6 +9,7 @@ const generateClassName = createGenerateClassName({
 });
 
 export default ({ history }) => {
+  console.log(history);
   return (
     <Fragment>
       <StylesProvider generateClassName={generateClassName}>
