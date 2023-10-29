@@ -1,13 +1,17 @@
 import React, { Fragment } from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { StylesProvider } from "@material-ui/core";
+import { StylesProvider, createGenerateClassName } from "@material-ui/core";
 import Pricing from "./components/Pricing";
 import Landing from "./components/Landing";
+
+const generateClassName = createGenerateClassName({
+  productionPrefix: "ma",
+});
 
 export default ({ history }) => {
   return (
     <Fragment>
-      <StylesProvider>
+      <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
             <Route exact path="/pricing" component={Pricing} />
