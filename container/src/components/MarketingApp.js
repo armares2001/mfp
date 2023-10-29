@@ -1,14 +1,16 @@
-import React, { Fragment } from "react";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { mount } from "marketing/App";
 
 const MarketingApp = () => {
   const ref = useRef(null);
+  const history = useHistory();
 
   useEffect(() => {
     mount(ref.current, {
-      onNavigate: () => {
-        console.log("navigate");
+      onNavigate: ({ pathname: nextPathname }) => {
+        history.push(nextPathname);
+        console.log(nextPathname);
       },
     });
   }, []);
