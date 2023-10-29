@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "./components/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useHistory } from "react-router-dom";
 
 import MarketingApp from "./components/MarketingApp";
 
@@ -14,12 +14,13 @@ const generateClassName = createGenerateClassName({
 });
 
 export default () => {
+  const history = useHistory();
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
-        <Header />
+        <Header history={history} />
 
-        <MarketingApp />
+        <MarketingApp history={history} />
 
         {/*<App/>*/}
       </StylesProvider>
