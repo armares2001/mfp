@@ -3,27 +3,25 @@ const commonConfig = require("./webpack.common");
 const Mfp = require("webpack/lib/container/ModuleFederationPlugin");
 const deps = require("./../package.json").dependencies;
 
-const devConfig = {
-  mode: "development",
+const domain = process.env.PRODUCTION_DOMAIN;
+
+const prodConfig = {
+  mode: "production",
   output: {
-    publicPath: "http://localhost:8080/",
+    filename: "[name].[contenthash].js",
+    publicPath: "/auth/latest/",
   },
   devServer: {
-    port: 8080,
     historyApiFallback: {
       historyApiFallback: true,
-      index: "/index.html",
     },
-    // historyApiFallback: {
-    //   index: "index.html",
-    // },
   },
   plugins: [
     new Mfp({
-      name: "container",
-      remotes: {
-        marketing: "marketing@http://localhost:8081/remoteEntry.js",
-        auth: "auth@http://localhost:8082/remoteEntry.js",
+      name: "auth",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./Auth": "./src/bootstrap",
       },
       shared: {
         ...deps,
@@ -44,7 +42,7 @@ const devConfig = {
   ],
 };
 
-const config = merge(commonConfig, devConfig);
+const config = merge(commonConfig, prodConfig);
 console.log(config);
 
 module.exports = config;

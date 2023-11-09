@@ -1,22 +1,27 @@
 import React, { Fragment } from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import { StylesProvider, createGenerateClassName } from "@material-ui/core";
-import Pricing from "./components/Pricing";
-import Landing from "./components/Landing";
+import SignUp from "./components/Signup";
+import SignIn from "./components/Signin";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "ma",
+  productionPrefix: "auth",
 });
 
-export default ({ history }) => {
-  console.log(history);
+export default ({ history, onSignIn }) => {
   return (
     <Fragment>
       <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
-            <Route exact path="/pricing" component={Pricing} />
-            <Route path="/" component={Landing} />
+            <Route
+              path="/auth/signin"
+              children={<SignIn onSignIn={onSignIn} />}
+            />
+            <Route
+              path="/auth/signup"
+              children={<SignUp onSignIn={onSignIn} />}
+            />
           </Switch>
         </Router>
       </StylesProvider>
